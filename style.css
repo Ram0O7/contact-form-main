@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+:root {
+  /* primary */
+  --green-200: hsl(148, 38%, 91%);
+  --green-600: hsl(169, 82%, 27%);
+  --green-400: hsl(169, 82%, 32%);
+  --red: hsl(0, 66%, 54%);
+
+  /* neutral */
+  --white: hsl(0, 0%, 100%);
+  --grey-500: hsl(186, 15%, 59%);
+  --grey-900: hsl(187, 24%, 22%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  background-color: var(--green-200);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 1.6rem;
+}
+
+form {
+  background-color: var(--white);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.name {
+  display: flex;
+  gap: 1rem;
+}
+
+label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--grey-900);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--grey-900);
+}
+
+.required {
+  color: var(--green-600);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--grey-500);
+  border-radius: 0.25rem;
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--grey-900);
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+textarea:hover {
+  outline: var(--green-600) solid 1px;
+}
+
+input[type="submit"] {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: var(--green-600);
+  color: var(--white);
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--green-400);
+}
+
+input[type="submit"]:active {
+  background-color: var(--green-200);
+  color: var(--green-600);
+}
+
+input[type="checkbox"] {
+  accent-color: var(--green-600);
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+
+input[type="radio"] {
+  accent-color: var(--green-600);
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+
+.consent {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.consent label {
+  margin-top: 0;
+}
+
+.query-type {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.query-type .type {
+  padding: 1rem 0.5rem;
+  margin-top: 0;
+  border: 1px solid var(--grey-500);
+  border-radius: 0.25rem;
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--grey-900);
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.query-type .type input {
+  margin: 0;
+}
+
+.query-type .type:hover,
+.query-type .type:has(input:checked) {
+  background-color: var(--green-200);
+}
+
+.query-type .type label {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.error-msg {
+  color: var(--red);
+  font-size: 0.65rem;
+  display: none;
+}
+
+.toast-msg {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  font-size: 0.8rem;
+  color: var(--grey-500);
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.65rem 1rem;
+  border-radius: 0.25rem;
+  background-color: var(--grey-900);
+  z-index: 999;
+  animation: popup 0.5s ease-in-out forwards;
+}
+
+@keyframes popup {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.msg {
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  gap: 0.5rem;
+}
+
+.msg p {
+  color: var(--white);
+}
+
+.msg svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+@media screen and (max-width: 420px) {
+  .toast-msg {
+    width: 90%;
+  }
+
+  .msg p {
+    font-size: 0.8rem;
+  }
+
+  .msg svg {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+
+  .query-type .type {
+    font-size: 0.8rem;
+  }
+
+  .query-type .type label {
+    font-size: 0.8rem;
+  }
+
+  .error-msg {
+    font-size: 0.6rem;
+  }
+
+  .consent label {
+    font-size: 0.8rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    font-size: 0.8rem;
+  }
+
+  input[type="submit"] {
+    font-size: 0.8rem;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+
+  .name {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .first-name,
+  .last-name {
+    width: 100%;
+  }
+
+  .query-type {
+    flex-direction: column;
+  }
+
+  .query-type .type {
+    width: 100%;
+  }
+
+  .query-type .type label {
+    font-size: 0.8rem;
+  }
+
+  form {
+    padding: 1rem;
+    width: 90%;
+  }
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Frontend Mentor | Contact form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toast-msg">
+      <div class="msg">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="21"
+          fill="none"
+          viewBox="0 0 20 21"
+        >
+          <path
+            fill="#fff"
+            d="M14.28 7.72a.748.748 0 0 1 0 1.06l-5.25 5.25a.748.748 0 0 1-1.06 0l-2.25-2.25a.75.75 0 1 1 1.06-1.06l1.72 1.72 4.72-4.72a.75.75 0 0 1 1.06 0Zm5.47 2.78A9.75 9.75 0 1 1 10 .75a9.76 9.76 0 0 1 9.75 9.75Zm-1.5 0A8.25 8.25 0 1 0 10 18.75a8.26 8.26 0 0 0 8.25-8.25Z"
+          />
+        </svg>
+        <p>Message Sent!</p>
+      </div>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
+    <form class="contact-form">
+      <h1>Contact Us</h1>
+      <div class="name">
+        <div class="first-name">
+          <label for="first-name"
+            >First Name <span class="required">*</span></label
+          >
+          <input
+            type="text"
+            name="first-name"
+            id="first-name"
+            placeholder="Your first name"
+          />
+          <span class="error-msg">This field is required</span>
+        </div>
+
+        <div class="last-name">
+          <label for="last-name"
+            >Last Name <span class="required">*</span></label
+          >
+          <input
+            type="text"
+            name="last-name"
+            id="last-name"
+            placeholder="Your last name"
+          />
+          <span class="error-msg">This field is required</span>
+        </div>
+      </div>
+
+      <div class="email">
+        <label for="email">Email Address <span class="required">*</span></label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Your email address"
+        />
+        <span class="error-msg">Please enter a valid email address</span>
+      </div>
+
+      <div class="query-select">
+        <label for="query-type"
+          >Query Type <span class="required">*</span></label
+        >
+        <div class="query-type">
+          <label for="general-enquiry" class="type">
+            <input type="radio" name="query-type" id="general-enquiry" />
+            General Enquiry</label
+          >
+
+          <label for="support-request" class="type">
+            <input type="radio" name="query-type" id="support-request" />
+            Support Request</label
+          >
+        </div>
+        <span class="error-msg">Please select a query type</span>
+      </div>
+
+      <div class="message">
+        <label for="message">Message <span class="required">*</span></label>
+        <textarea
+          name="message"
+          id="message"
+          cols="30"
+          rows="4"
+          style="resize: none"
+          maxlength="200"
+          placeholder="Your message"
+        ></textarea>
+        <span class="error-msg">This field is required</span>
+      </div>
+
+      <div class="consent">
+        <input type="checkbox" name="consent" id="consent" />
+        <label for="consent"
+          >I consent to being contacted by the team
+          <span class="required">*</span></label
+        >
+      </div>
+
+      <span class="checkbox-error error-msg"
+        >To submit this form, Please consent to being contacted</span
+      >
+
+      <input type="submit" value="Submit" />
+    </form>
+    <!-- Contact Us First Name This field is required Last Name This field is
+    required Email Address Please enter a valid email address This field is
+    required Query Type General Enquiry Support Request Please select a query
+    type Message This field is required I consent to being contacted by the team
+    To submit this form, please consent to being contacted Submit Message Sent!
+    Thanks for completing the form. We'll be in touch soon! -->
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="https://ramkrishnrai.vercel.app/">Ramkrishn Rai</a>.
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
