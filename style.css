@@ -37,6 +37,7 @@ h1 {
 
 form {
   background-color: var(--white);
+  width: min(90%, 35rem);
   padding: 2rem;
   margin-bottom: 2rem;
   border-radius: 0.5rem;
@@ -52,10 +53,9 @@ label {
   display: block;
   font-size: 0.8rem;
   font-weight: 700;
-  color: var(--grey-900);
+  color: var(--grey-500);
   margin-top: 1rem;
   margin-bottom: 0.5rem;
-  color: var(--grey-900);
 }
 
 .required {
@@ -72,6 +72,11 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   color: var(--grey-900);
+}
+
+.first-name,
+.last-name {
+  width: 100%;
 }
 
 input[type="text"]:hover,
@@ -134,13 +139,12 @@ input[type="radio"] {
 }
 
 .query-type .type {
-  padding: 1rem 0.5rem;
+  padding: 0.5rem;
   margin-top: 0;
   border: 1px solid var(--grey-500);
   border-radius: 0.25rem;
   font-family: inherit;
   font-size: inherit;
-  color: var(--grey-900);
   cursor: pointer;
   width: 100%;
   display: flex;
@@ -212,7 +216,7 @@ input[type="radio"] {
   height: 1rem;
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 480px) {
   .toast-msg {
     width: 90%;
   }
@@ -263,11 +267,6 @@ input[type="radio"] {
     gap: 0;
   }
 
-  .first-name,
-  .last-name {
-    width: 100%;
-  }
-
   .query-type {
     flex-direction: column;
   }
@@ -282,6 +281,5 @@ input[type="radio"] {
 
   form {
     padding: 1rem;
-    width: 90%;
   }
 }
